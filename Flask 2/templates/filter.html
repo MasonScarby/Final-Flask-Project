@@ -1,0 +1,52 @@
+<style>
+    .body{
+        margin: auto;
+    }
+    .input_field {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .input_submit {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .input_submit:hover {
+      background-color: #45a049;
+    }
+</style>
+
+{% extends "base.html"%}
+{% block body %}
+
+<div class="body">
+        <h3>Search for account</h3>
+        <form action="/filter" method="POST">
+            <input type="text" name="type" placeholder="Teacher or Student" class="input_field"> <br>
+            <input type="submit" value="Submit" class="input_submit">
+        </form>
+    {% for i in info_type %}
+        <ul>
+            <li>Account Type: {{ i[0] }} </li>
+            <ul>
+                <li>Account name: {{ i[1] }} </li>
+                <li>Email: {{ i[2] }} </li>
+                <li>Username: {{ i[3] }} </li>
+                <li>Password: {{ i[4] }} </li>
+            </ul>
+        </ul>
+    {% endfor %}
+
+{% endblock %}
