@@ -2,6 +2,7 @@
      .body{
         margin: auto;
     }
+
     .input_field {
       width: 100%;
       padding: 12px 20px;
@@ -31,17 +32,14 @@
 
 {% block body %}
 <h1>This is the register page</h1>
-<!--  <p->{{boats_info}}</p->-->
-    <div class="body">
-
-        <form action="/create_acc" method="POST">
-            <input type="number" name="user_id" placeholder="teacher or student id number" class="input_field"> <br>
-            <input type="text" name="type" placeholder="teacher or student" class="input_field"> <br>
-            <input type="text" name="name" placeholder="name" class="input_field"> <br>
-            <input type="text" name="email" placeholder="email" class="input_field"> <br>
-            <input type="text" name="username" placeholder="username" class="input_field"> <br>
-            <input type="text" name="password" placeholder="password" class="input_field" step="0.01"> <br>
-            <input type="submit" value="Submit" class="input_submit">
-        </form>
-    </div>
+<div class="body">
+    <form action="/create_acc" method="POST">
+        <input type="text" name="type" placeholder="teacher or student" class="input_field"> <br>
+        <input type="text" name="name" placeholder="name" class="input_field"> <br>
+        <input type="text" name="email" placeholder="email" class="input_field"> <br>
+        <input type="text" name="username" placeholder="username" class="input_field"> <br>
+        <input type="password" name="password" placeholder="password" class="input_field"> <br>
+        <input type="submit" value="Submit" class="input_submit">
+    </form>
+</div>
 {% endblock %}

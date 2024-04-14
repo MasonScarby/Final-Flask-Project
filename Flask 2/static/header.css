@@ -1,26 +1,58 @@
+.body {
+  cursor: auto;
+}
 
-.barItem{
-  display: inline-block;
+.barItem {
+  list-style-type: none;
+  display: flex; /* Change display to flex */
+  justify-content: space-between; /* Adjust alignment */
+  align-items: center; /* Adjust alignment */
+  width: 100%;
+  background-color: #faf9f7; /* Move background color here */
+  padding: 10px;
 }
 
 .logo {
   width: 45px;
 }
-xs
+
 header li {
-  float: left;
-  display: block;
+  display: inline-block; /* Change from float: left */
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.topBar{
-  background-color: #faf9f7;
-  display:flex;
-  justify-content: space-between;
-  align-items:center;
+.formSection {
   padding: 10px;
+  right: 0;
 }
+
+.input,
+.barItem input {
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.mainDiv {
+  margin: auto;
+  width: 30%;
+}
+
+h1 {
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+
+
 
 .formSection {
   padding: 10px;
@@ -32,8 +64,8 @@ header li {
   border: none;
   border-radius: 5px;
   margin-left: 10px;
+  display: inline-block;
 }
-
 .mainDiv {
   margin: auto;
   width: 30%;
@@ -47,6 +79,7 @@ h1{
 header a{
   text-decoration:none;
   color:black;
+  display:inline-block;
 }
 
 /* FOOTER */
@@ -86,13 +119,6 @@ body {
 .footer__addr {
   margin-right: 1.25em;
   margin-bottom: 2em;
-}
-
-.footer__logo {
-  font-family: 'Pacifico', cursive;
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-align: left;
 }
 
 .footer__addr h2 {

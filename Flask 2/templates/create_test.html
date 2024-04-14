@@ -7,24 +7,25 @@
     <h2>Create New Test</h2>
 
     <form action="/create_test" method="POST">
-        <label for="test_id">Test ID:</label>
-        <input type="text" id="test_id" name="test_id"><br><br>
 
-        <label for="teacher_id">Teacher ID:</label>
-        <input type="text" id="teacher_id" name="teacher_id"><br><br>
+    <label for="test_id">Test ID:</label>
+    <input type="number" id="test_id" name="test_id"><br><br>
 
-        <label for="test_name">Test Name:</label>
-        <input type="text" id="test_name" name="test_name"><br><br>
+    <label for="teacher_id">User ID:</label>
+    <input type="text" id="teacher_id" name="teacher_id"><br><br>
 
-        <label for="test_question">Test Question:</label>
-        <input type="text" id="test_question" name="test_question"><br><br>
+    <label for="test_name">Test Name:</label>
+    <input type="text" id="test_name" name="test_name"><br><br>
 
-        <label for="test_answer">Test Answer:</label>
-        <input type="text" id="test_answer" name="test_answer"><br><br>
+    <button type="submit" value="Submit" class="input_submit">Create Test</button>
 
-        <button type="submit" value="Submit" class="input_submit">Create Test</button>
-    </form>
-    <h2>All Tests</h2>
-    <div id="allTests"></div>
-{% endblock %}
+        <a href="/create_question">button type="button" value="button" >Add Questions</button></a><
+
+</form>
+    {% if test_info %}
+  <p>Test created with ID {{ test_info }}</p>
+{% endif %}
+
 </body>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html"%}
+{% block body %}
+    {% for i in show_tests %}
+        <ul>
+            <li>Test ID: {{i[0]}} </li>
+            <li>Teacher ID: {{i[1]}} </li>
+            <li>Test Name: {{i[2]}} </li>
+            <li>Test Question: {{i[3]}} </li>
+            <li>Test Answer: {{i[4]}} </li>
+        </ul>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

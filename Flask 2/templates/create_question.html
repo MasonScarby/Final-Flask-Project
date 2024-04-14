@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block body %}
+
+<body>
+    <h1>Question Management</h1>
+
+    <h2>Add Question to any test</h2>
+
+    <form action="/create_question" method="post">
+
+    <label for="test_id">Test ID:</label>
+    <input type="text" id="test_id" name="test_id"><br><br>
+
+     <label for="test_question">Test Question:</label>
+    <input type="text" id="test_question" name="test_question"><br><br>
+
+    <label for="answer">Test Answer:</label>
+    <input type="text" id="answer" name="answer"><br><br>
+
+    <button type="submit" value="Submit" class="input_submit">Add Question</button>
+</form>
+
+</body>
+
+{% endblock %}

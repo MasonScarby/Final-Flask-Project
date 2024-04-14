@@ -32,22 +32,27 @@
 {% block body %}
 
 <div class="body">
-        <h3>Take a test</h3>
-        <form action="/take_test" method="POST">
-            <input type="text" name="test_id" placeholder="Test ID" class="input_field"> <br>
-            <input type="submit" value="Submit" class="input_submit">
-        </form>
-    {% for i in test_info %}
-            <h1> {{ i[0] }} </h1>
-    <form>
-            <ul>
-            <li>Account name: {{ i[1] }} </li>
-            <li>Email: {{ i[2] }} </li>
-            <li>Username: {{ i[3] }} </li>
-                <input type="text">
-            </ul>
+    <h3>Take a test</h3>
+    <form action="/take_test" method="POST">
+        <input type="text" name="test_id" placeholder="Test ID" class="input_field"> <br>
+        <input type="text" name="user_id" placeholder="User ID" class="input_field"> <br>
+        <input type="submit" value="Submit" class="input_submit">
     </form>
-</div>
+    {% for info in test_info %}
+        <h1>{{ info[0] }}</h1>
+        <form>
+            <ul>
+                <li>Account name: {{ info[1] }}</li>
+                <li>Email: {{ info[2] }}</li>
+                <li>Username: {{ info[3] }}</li>
+                <!-- Add input fields with names for submitting data -->
+                <li><input type="text" name="answer"></li>
+            </ul>
+        </form>
     {% endfor %}
+</div>
+
+all tests here
+{% endfor %}
 
 {% endblock %}
