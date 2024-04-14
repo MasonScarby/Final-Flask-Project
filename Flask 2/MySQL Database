@@ -1,0 +1,80 @@
+CREATE DATABASE flask;
+USE flask;
+
+CREATE TABLE users (
+    id serial PRIMARY KEY,
+    type VARCHAR(20),
+    name VARCHAR(50),
+    email VARCHAR(50) UNIQUE,
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(50)
+);
+
+CREATE TABLE tests (
+    test_id int PRIMARY KEY,
+    teacher_id INT,
+    test_name VARCHAR(50)
+);
+
+CREATE TABLE questions (
+    question_id serial PRIMARY KEY,
+    test_question VARCHAR(1000),
+    answer varchar (1000),
+    test_id INT,
+    FOREIGN KEY (test_id) REFERENCES tests(test_id)
+);
+
+CREATE TABLE test_questions (
+    test_question_id INT PRIMARY KEY,
+    test_id INT,
+    question_id serial,
+    FOREIGN KEY (test_id) REFERENCES tests(test_id)
+);
+drop table test_questions;
+CREATE TABLE students (
+    student_id serial,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    FOREIGN KEY (student_id) REFERENCES users(id)
+);
+
+CREATE TABLE teachers (
+    teacher_id serial,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    FOREIGN KEY (teacher_id) REFERENCES users(id)
+);
+
+CREATE TABLE responses (
+    response_id INT PRIMARY KEY,
+    student_id serial,
+    test_id INT,
+    response_text TEXT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (test_id) REFERENCES tests(test_id)
+);
+
+CREATE TABLE marks (
+    mark_id INT PRIMARY KEY,
+    test_id INT,
+    student_id serial,
+    marks_achieved INT,
+    FOREIGN KEY (test_id) REFERENCES tests(test_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+
+SELECT * FROM users;
+
+DROP DATABASE flask;
+DROP TABLE tests;
+
+SHOW TABLES;
+SELECT * FROM questions;
+SELECT * FROM tests;
+select * from test_questions;
+SELECT * FROM users;
+
+SELECT * FROM students;
+SELECT * FROM teachers;
+
+
