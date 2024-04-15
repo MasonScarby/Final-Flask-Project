@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="body">
+    <h3>Take a test</h3>
+    <form action="/take_test" method="POST">
+        <input type="text" name="test_id" placeholder="Test ID" class="input_field"> <br>
+        <input type="text" name="tester_id" placeholder="User ID" class="input_field"> <br> {# Changed user_id to tester_id #}
+        <input type="submit" value="Submit" class="input_submit">
+    </form>
+    {% if test_info %}
+        <h1>{{ test_info[0] }}</h1>
+        <form>
+            <ul>
+                <li>Account name: {{ test_info[1] }}</li>
+                <li>Email: {{ test_info[2] }}</li>
+                <li>Username: {{ test_info[3] }}</li>
+                <li><input type="text" name="answer"></li>
+            </ul>
+        </form>
+    {% endif %}
+</div>
+
+{% endblock %}
